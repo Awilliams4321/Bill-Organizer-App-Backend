@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     private
 
-    def bill_params
+    def user_params
         params.require(:user).permit(:name, :email)
     end
 
