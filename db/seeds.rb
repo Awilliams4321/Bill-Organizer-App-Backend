@@ -7,9 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "Test1", email: "tester1@gmail.com")
-User.create(name: "Test2", email: "tester2@gmail.com")
 
-Bill.create(name: "Car Payment", creditor: "Suntrust", balance_owed: 15000, monthly_payment: 250, due_date: 15, user_id: 1)
-Bill.create(name: "School Loan", creditor: "Climb", balance_owed: 11000, monthly_payment: 400, due_date: 25, user_id: 2)
+Category.create(name: "Debt")
+Category.create(name: "Housing")
+Category.create(name: "Insurance")
+Category.create(name: "Medical")
+Category.create(name: "Personal")
+Category.create(name: "School Loans")
+Category.create(name: "Subscriptions")
+Category.create(name: "Utilities")
+Category.create(name: "Vehicle")
+Category.create(name: "Other")
+
+
+Bill.create(name: "Car Payment", creditor: "Suntrust", balance_owed: 15000, monthly_payment: 250, due_date: 15, category_id: 9)
+Bill.create(name: "Flatiron School", creditor: "Climb", balance_owed: 11000, monthly_payment: 400, due_date: 25, category_id: 6)
 
