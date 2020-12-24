@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
     end
 
     def create
-        category.new(category_params)
+        category = Category.new(category_params)
         if category.save
             render json: CategorySerializer.new(category)
         else
