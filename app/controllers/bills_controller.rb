@@ -11,7 +11,6 @@ class BillsController < ApplicationController
     end
 
     def create
-        byebug
         bill = Bill.new(bill_params)
         if bill.save
             render json: BillSerializer.new(bill)
@@ -20,9 +19,14 @@ class BillsController < ApplicationController
         end
     end
 
+    def destroy
+        bill = Bill.find_by(id: params[:id])
+        bill.destroy
+    end
+
     private
 
     def bill_params
-        params.require(:bill).permit(:name, :creditor, :balance_owed, :monthly_payment, :due_date, :category_id)
+        params.require(:bill).permit(:id, :name, :creditor, :balance_owed, :monthly_payment, :due_date, :category_id)
     end
 end
